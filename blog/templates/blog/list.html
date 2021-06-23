@@ -1,0 +1,43 @@
+{% extends 'home/base.html' %}
+
+
+{% block content %}
+
+{% for posts in post  %}
+
+
+<div class="table-responsive" style="margin-top: 50px;;">
+    <table class="table table-dark table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Image</th>
+          <th>Body</th>
+          <th>date</th>
+          <th>author</th>
+
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> {{posts.id}}</td>
+          <td> <a href="{{posts.get_absolute_url}} ">{{posts.title}} </a></td>
+          <td> <img src="{{posts.image.url}}" class="img-thumbnail" alt=""></td>
+          <td>{{posts.detail | safe}}</td>
+          <td>{{posts.publish}}</td>
+          <td>{{posts.author}}</td>
+         
+
+         
+        </tr>
+      </tbody>
+    </table>
+ 
+
+
+{% endfor %}
+
+{% endblock content %}
+
