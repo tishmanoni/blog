@@ -19,7 +19,7 @@
                   Please try again.
                 </p>
               {% else %}
-              {% comment %} <p>Please, use the following form to log-in. If you don't have an account <a href="{% url "register" %}">register here</a></p> {% endcomment %}
+              <p>Please, use the following form to log-in. If you don't have an account <a href="{% url "account:register" %}">register here</a></p>
               {% endif %}      
                  <form action="/account/login/" method="post" novalidate>
               
@@ -33,7 +33,7 @@
 
 
 
-              {% comment %} <p><a href="{% url "password_reset" %}">Forgotten your password?</a></p> {% endcomment %}
+              <p><a href="{% url "account:password_reset" %}">Forgotten your password?</a></p>
              
                 {% comment %} <a href="{% url "social:begin" "google-oauth2" %}" class="btn btn-danger">Login with Google</a>
                  <a href="{% url "social:begin" "twitter" %}" class="btn btn-primary">Login with Twitter</a> {% endcomment %}
